@@ -1,26 +1,12 @@
 
-# Relatório de Logs NextDNS
+# Relatório de Logs NextDNS - Sites Adultos e Conexões de Voz
 
-Gerado em: 2024-11-26 12:56:13
+Gerado em: 2024-11-26 13:31:30
 
-## Estatísticas por Protocolo
-protocol
-UDP    100
+## Estatísticas
+- Total de logs filtrados: 0
 
-## Top 10 Domínios (todos os protocolos)
-domain
-a-z4ngy.data.emb-api.com                2
-api-sdk.datadome.co                     2
-web.diagnostic.networking.aws.dev       2
-us.wifiapi.micloud.xiaomi.net           2
-update.googleapis.com                   2
-play.googleapis.com                     2
-play-fe.googleapis.com                  2
-voledevice-pa.googleapis.com            1
-android-safebrowsing.google.com         1
-crashlyticsreports-pa.googleapis.com    1
-
-## Logs não-UDP
+## Logs Detalhados
 Empty DataFrame
-Columns: [timestamp, domain, root, encrypted, protocol, clientIp, status, reasons, tracker]
+Columns: [timestamp, domain, root, tracker, encrypted, protocol, clientIp, status, reasons]
 Index: []
