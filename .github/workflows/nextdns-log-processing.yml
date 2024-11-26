@@ -27,36 +27,69 @@ jobs:
           python - <<EOF
           import requests
           import pandas as pd
-          from datetime import datetime
           import io
+           from datetime import datetime
 
           NEXTDNS_API_KEY = "f31f2871d328a52a45fefadc09a1c67d0dd5d53d"
           NEXTDNS_PROFILE_ID = "85d564"
 
-          def obter_logs_nextdns():
-              url = f"https://api.nextdns.io/profiles/{NEXTDNS_PROFILE_ID}/logs/download"
-              headers = {"X-Api-Key": NEXTDNS_API_KEY}
-              response = requests.get(url, headers=headers)
-              if response.status_code == 200:
-                  return pd.read_csv(io.StringIO(response.text))
-              else:
-                  raise Exception(f"Erro ao obter logs: {response.status_code}, {response.text}")
+def obter_logs_nextdns():
+    url = f"https://api.nextdns.io/profiles/{NEXTDNS_PROFILE_ID}/logs/download"
+    headers = {"X-Api-Key": NEXTDNS_API_KEY}
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        return pd.read_csv(io.StringIO(response.text), low_memory=False)
+    else:
+        raise Exception(f"Erro ao obter logs: {response.status_code}, {response.text}")
 
-          df = obter_logs_nextdns()
+df = obter_logs_nextdns()
 
-          # Processamento e análise dos logs
-          df['timestamp'] = pd.to_datetime(df['timestamp'])
-          df['date'] = df['timestamp'].dt.date
+# Processamento e análise dos logs
+df['timestamp'] = pd.to_datetime(df['timestamp'])
+df['date'] = df['timestamp'].dt.date
 
-          # Análises detalhadas
-          total_queries = len(df)
-          queries_por_status = df['status'].value_counts()
-          queries_por_protocolo = df['protocol'].value_counts()
-          top_domains = df['domain'].value_counts().head(20)
-          top_trackers = df['tracker'].fillna('Não especificado').value_counts().head(20)
-          top_roots = df['root'].value_counts().head(20)
-          encrypted_ratio = df['encrypted'].value_counts(normalize=True)
-          unique_client_ips = df['client_ip'].nunique()
+# Análises detalhadas
+total_queries = len(df)
+queries_por_status = df['status'].value_counts()
+queries_por_protocolo = df['protocol'].value_counts()
+top_domains = df['domain'].value_counts().head(20)
+top_roots = df['root'].value_counts().head(20)
+encrypted_ratio = df['encrypted'].value_counts(normalize=True)
+unique_client_ips = df['clientIp'].nunique()
+
+# Gerar relatório
+report = f"""
+# Relatório Detalhado de Logs NextDNS
+
+Gerado em: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+
+## Estatísticas Gerais
+- Total de consultas: {total_queries}
+- IPs de clientes únicos: {unique_client_ips}
+
+## Consultas por Status
+{queries_por_status.to_string()}
+
+## Consultas por Protocolo
+{queries_por_protocolo.to_string()}
+
+## Top 20 Domínios
+{top_domains.to_string()}
+
+## Top 20 Domínios Raiz
+{top_roots.to_string()}
+
+## Proporção de Consultas Criptografadas
+{encrypted_ratio.to_string()}
+
+## Análise Temporal
+{df.groupby(df['timestamp'].dt.hour)['domain'].count().to_string()}
+"""
+
+with open('nextdns_report.md', 'w') as f:
+    f.write(report)
+
+print("Relatório detalhado gerado com sucesso.")
 
           # Gerar relatório
           report = f"""
