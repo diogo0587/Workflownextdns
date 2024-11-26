@@ -38,12 +38,6 @@ jobs:
           logs = obter_logs_nextdns()
           df = pd.DataFrame(logs)
           
-          # Definindo listas de sites adultos e conexões de voz
-          sites_adultos = ["pornhub.com", "xvideos.com", "adultsite.com"]
-          conexoes_voz = ["voice.example.com", "sip.example.com"]
-          
-          # Filtrando logs
-          df_filtrado = df[df['domain'].isin(sites_adultos + conexoes_voz)]
           
           # Gerando relatório
           report = f"""
