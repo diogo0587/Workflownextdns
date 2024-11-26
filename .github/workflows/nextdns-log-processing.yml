@@ -35,7 +35,7 @@ jobs:
 
 def obter_logs_nextdns():
     url = f"https://api.nextdns.io/profiles/{NEXTDNS_PROFILE_ID}/logs/download"
-    headers = {"X-Api-Key": NEXTDNS_API_KEY}
+    headers = {"X-Api-Key":{NEXTDNS_API_KEY}}
     response = requests.get(url, headers=headers)
     if response.status_code == 200:
         return pd.read_csv(io.StringIO(response.text), low_memory=False)
