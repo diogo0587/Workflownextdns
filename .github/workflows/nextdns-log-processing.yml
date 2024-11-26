@@ -1,0 +1,90 @@
+name: NextDNS Log Processing
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Executa a cada 6 horas
+  workflow_dispatch:  # Permite execução manual
+
+jobs:
+  process-nextdns-logs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests pandas
+
+      - name: Fetch and process NextDNS logs
+        run: |
+          python - <<EOF
+          import requests
+          import pandas as pd
+          import json
+          from datetime import datetime
+
+          NEXTDNS_API_KEY = "f31f2871d328a52a45fefadc09a1c67d0dd5d53d"
+          NEXTDNS_PROFILE_ID = "85d564"
+
+          def obter_logs_nextdns():
+              url = f"https://api.nextdns.io/profiles/{NEXTDNS_PROFILE_ID}/logs"
+              headers = {"X-Api-Key": NEXTDNS_API_KEY}
+              response = requests.get(url, headers=headers)
+              return response.json()["data"]
+
+          logs = obter_logs_nextdns()
+          df = pd.DataFrame(logs)
+          
+          # Processar e analisar os logs
+          df['timestamp'] = pd.to_datetime(df['timestamp'])
+          df['date'] = df['timestamp'].dt.date
+          
+          # Análises básicas
+          total_queries = len(df)
+          blocked_queries = len(df[df['status'] == 'blocked'])
+          top_domains = df['domain'].value_counts().head(10)
+          top_trackers = df['tracker'].value_counts().head(10)
+          
+          # Gerar relatório
+          report = f"""
+          # Relatório de Logs NextDNS para diogo0587
+          
+          Gerado em: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+          
+          ## Estatísticas Gerais
+          - Total de consultas: {total_queries}
+          - Consultas bloqueadas: {blocked_queries}
+          
+          ## Top 10 Domínios
+          {top_domains.to_string()}
+          
+          ## Top 10 Rastreadores
+          {top_trackers.to_string()}
+          """
+          
+          with open('nextdns_report.md', 'w') as f:
+              f.write(report)
+          
+          print("Relatório gerado com sucesso.")
+          EOF
+
+      - name: Commit and push report
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add nextdns_report.md
+          git commit -m "Atualizar relatório NextDNS" || echo "No changes to commit"
+          git push
+
+      - name: Upload report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: nextdns-report
+          path: nextdns_report.md
