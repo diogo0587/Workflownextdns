@@ -27,7 +27,6 @@ jobs:
           python - <<EOF
           import requests
           import pandas as pd
-          import json
           from datetime import datetime
 
           NEXTDNS_API_KEY = "f31f2871d328a52a45fefadc09a1c67d0dd5d53d"
@@ -42,24 +41,26 @@ jobs:
           logs = obter_logs_nextdns()
           df = pd.DataFrame(logs)
           
-          # Definindo listas de sites adultos e conexões de voz
-          sites_adultos = ["pornhub.com", "xvideos.com", "adultsite.com"]
-          conexoes_voz = ["voice.example.com", "sip.example.com"]
+          # Processamento dos logs
+          df['timestamp'] = pd.to_datetime(df['timestamp'])
           
-          # Filtrando logs
-          df_filtrado = df[df['domain'].isin(sites_adultos + conexoes_voz)]
+          # Análise por protocolo
+          protocolos = df['protocol'].value_counts()
           
-          # Gerando relatório
+          # Gerar relatório
           report = f"""
-          # Relatório de Logs NextDNS - Sites Adultos e Conexões de Voz
+          # Relatório de Logs NextDNS
           
           Gerado em: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
           
-          ## Estatísticas
-          - Total de logs filtrados: {len(df_filtrado)}
+          ## Estatísticas por Protocolo
+          {protocolos.to_string()}
           
-          ## Logs Detalhados
-          {df_filtrado.to_string(index=False)}
+          ## Top 10 Domínios (todos os protocolos)
+          {df['domain'].value_counts().head(10).to_string()}
+          
+          ## Logs não-UDP
+          {df[df['protocol'] != 'UDP'].to_string(index=False)}
           """
           
           with open('nextdns_report.md', 'w') as f:
@@ -73,7 +74,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add nextdns_report.md
-          git commit -m "Atualizar relatório NextDNS - Sites Adultos e Conexões de Voz" || echo "No changes to commit"
+          git commit -m "Atualizar relatório NextDNS" || echo "No changes to commit"
           git push
 
       - name: Upload report as artifact
