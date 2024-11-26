@@ -142,3 +142,4 @@ print("Relatório detalhado gerado com sucesso.")
         with:
           name: nextdns-report
           path: nextdns_report.md
+          
