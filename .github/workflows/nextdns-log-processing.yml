@@ -42,31 +42,24 @@ jobs:
           logs = obter_logs_nextdns()
           df = pd.DataFrame(logs)
           
-          # Processar e analisar os logs
-          df['timestamp'] = pd.to_datetime(df['timestamp'])
-          df['date'] = df['timestamp'].dt.date
+          # Definindo listas de sites adultos e conexões de voz
+          sites_adultos = ["pornhub.com", "xvideos.com", "adultsite.com"]
+          conexoes_voz = ["voice.example.com", "sip.example.com"]
           
-          # Análises básicas
-          total_queries = len(df)
-          blocked_queries = len(df[df['status'] == 'blocked'])
-          top_domains = df['domain'].value_counts().head(10)
-          top_trackers = df['tracker'].value_counts().head(10)
+          # Filtrando logs
+          df_filtrado = df[df['domain'].isin(sites_adultos + conexoes_voz)]
           
-          # Gerar relatório
+          # Gerando relatório
           report = f"""
-          # Relatório de Logs NextDNS para diogo0587
+          # Relatório de Logs NextDNS - Sites Adultos e Conexões de Voz
           
           Gerado em: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
           
-          ## Estatísticas Gerais
-          - Total de consultas: {total_queries}
-          - Consultas bloqueadas: {blocked_queries}
+          ## Estatísticas
+          - Total de logs filtrados: {len(df_filtrado)}
           
-          ## Top 10 Domínios
-          {top_domains.to_string()}
-          
-          ## Top 10 Rastreadores
-          {top_trackers.to_string()}
+          ## Logs Detalhados
+          {df_filtrado.to_string(index=False)}
           """
           
           with open('nextdns_report.md', 'w') as f:
@@ -80,7 +73,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add nextdns_report.md
-          git commit -m "Atualizar relatório NextDNS" || echo "No changes to commit"
+          git commit -m "Atualizar relatório NextDNS - Sites Adultos e Conexões de Voz" || echo "No changes to commit"
           git push
 
       - name: Upload report as artifact
