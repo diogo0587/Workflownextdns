@@ -2,8 +2,8 @@ name: Build Hugo Site with NextDNS Logs, Cockpit CMS, and Deploy to Pages
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Executa diariamente à meia-noite
-  workflow_dispatch:  # Permite execução manual
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -37,6 +37,53 @@ jobs:
         git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
         echo 'theme = "ananke"' >> config.toml
         echo 'baseURL = "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"' >> config.toml
+
+    - name: Create Hugo layouts
+      run: |
+        mkdir -p layouts/_default
+        cat << EOF > layouts/index.html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{{ .Title }}</title>
+        </head>
+        <body>
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        </body>
+        </html>
+        EOF
+        cat << EOF > layouts/_default/single.html
+        {{ define "main" }}
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+        {{ end }}
+        EOF
+        cat << EOF > layouts/_default/list.html
+        {{ define "main" }}
+            <h1>{{ .Title }}</h1>
+            <ul>
+            {{ range .Pages }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ end }}
+            </ul>
+        {{ end }}
+        EOF
+        cat << EOF > layouts/_default/baseof.html
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{{ .Title }}</title>
+        </head>
+        <body>
+            {{ block "main" . }}{{ end }}
+        </body>
+        </html>
+        EOF
 
     - name: Generate content
       run: |
@@ -77,7 +124,7 @@ jobs:
     - name: Install Cockpit CMS
       run: |
         mkdir -p public/cockpit
-        wget https://getcockpit.com/download/core -O cockpit.zip
+        wget https://github.com/agentejo/cockpit/releases/latest/download/cockpit.zip
         unzip cockpit.zip -d public/cockpit
         rm cockpit.zip
         echo "<?php define('COCKPIT_ADMIN_PASSWORD', '${{ secrets.COCKPIT_ADMIN_PASSWORD }}'); ?>" > public/cockpit/.htaccess
