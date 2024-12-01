@@ -3,7 +3,7 @@
 Última atualização: Sun Dec  1 06:39:05 UTC 2024
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
-Acesse o Cockpit CMS: https://diogo0587.github.io/Workflownextdns/cockpit/
+Acesse o Cockpit CMS: https://diogo0587.github.io/Workflownextdns/cockpit/cockpit-core/install/index.php
 
 ## Logs Recentes
 
