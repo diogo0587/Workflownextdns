@@ -1,0 +1,112 @@
+name: Build Hugo Site and Update README
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Executa diariamente à meia-noite
+  workflow_dispatch:  # Permite execução manual
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+        fetch-depth: 0
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+
+    - name: Fetch NextDNS logs
+      uses: fjogeleit/http-request-action@v1
+      id: nextdns_request
+      with:
+        url: 'https://api.nextdns.io/profiles/85d564/logs'
+        method: 'GET'
+        customHeaders: '{"X-Api-Key": "f31f2871d328a52a45fefadc09a1c67d0dd5d53d"}'
+
+    - name: Create Hugo site
+      run: |
+        hugo new site hugo_site --force
+        cd hugo_site
+        git init
+        git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+        echo "theme = 'ananke'" >> config.toml
+
+    - name: Generate content
+      run: |
+        cd hugo_site
+        mkdir -p content/posts
+        python3 - <<EOF
+        import json
+        import os
+        from datetime import datetime
+        
+        logs = json.loads('${{ steps.nextdns_request.outputs.response }}')
+        
+        for i, log in enumerate(logs['data'][:10]):
+            with open(f'content/posts/log-{i+1}.md', 'w') as f:
+                f.write(f"""
+        ---
+        title: "Log Entry {i+1}"
+        date: {datetime.now().isoformat()}
+        ---
+        
+        Domain: {log.get('domain', 'N/A')}
+        Status: {log.get('status', 'N/A')}
+        Timestamp: {log.get('timestamp', 'N/A')}
+        """)
+        
+        with open('content/_index.md', 'w') as f:
+            f.write("""
+        ---
+        title: "NextDNS Logs Dashboard"
+        ---
+        
+        Bem-vindo ao Dashboard de Logs do NextDNS. Abaixo estão as entradas de log mais recentes.
+        """)
+        EOF
+
+    - name: Build Hugo site
+      run: |
+        cd hugo_site
+        hugo --minify
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./hugo_site/public
+
+    - name: Update README.md
+      run: |
+        echo "# NextDNS Logs Dashboard" > README.md
+        echo "" >> README.md
+        echo "Última atualização: $(date)" >> README.md
+        echo "" >> README.md
+        echo "Visite o dashboard: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> README.md
+        echo "" >> README.md
+        echo "## Logs Recentes" >> README.md
+        echo "" >> README.md
+        python3 - <<EOF
+        import json
+        logs = json.loads('${{ steps.nextdns_request.outputs.response }}')
+        with open('README.md', 'a') as f:
+            for log in logs['data'][:10]:
+                f.write(f"- {log['timestamp']}: {log['domain']} ({log['status']})\n")
+        EOF
+
+    - name: Commit and push if changed
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git add README.md
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest logs" && git push)
+
+    - name: Display GitHub Pages URL
+      run: |
+        echo "O dashboard foi publicado em: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
