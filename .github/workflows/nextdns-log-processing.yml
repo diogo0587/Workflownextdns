@@ -106,11 +106,7 @@ jobs:
         git config --global user.name "GitHub Action"
         git add README.md
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest logs")
-        git fetch origin main
-        git checkout main
-        git reset --hard origin/main
-        git cherry-pick ORIG_HEAD || true
-        git push origin main
+        git push origin main || git pull --rebase origin main && git push origin main
 
     - name: Display GitHub Pages URL
       run: |
