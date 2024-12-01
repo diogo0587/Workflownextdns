@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -128,11 +128,11 @@ jobs:
         unzip cockpit.zip -d public/cockpit
         rm cockpit.zip
         echo "<?php define('COCKPIT_ADMIN_PASSWORD', '${{ secrets.COCKPIT_ADMIN_PASSWORD }}'); ?>" > public/cockpit/.htaccess
-        mkdir -p public/cockpit/storage/data
-        mkdir -p public/cockpit/storage/uploads
-        mkdir -p public/cockpit/storage/cache
-        mkdir -p public/cockpit/storage/tmp
-        chmod -R 755 public/cockpit/storage
+        mkdir -p public/cockpit/cockpit/storage/data
+        mkdir -p public/cockpit/cockpit/storage/uploads
+        mkdir -p public/cockpit/cockpit/storage/cache
+        mkdir -p public/cockpit/cockpit/storage/tmp
+        chmod -R 755 public/cockpit/cockpit/storage
 
     - name: Update README.md
       run: |
@@ -169,11 +169,18 @@ jobs:
       with:
         path: './public'
 
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v2
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
 
-    - name: Display GitHub Pages URL
-      run: |
-        echo "O dashboard foi publicado em: ${{ steps.deployment.outputs.page_url }}"
-        echo "O Cockpit CMS está disponível em: ${{ steps.deployment.outputs.page_url }}cockpit/"
+      - name: Display GitHub Pages URL
+        run: |
+          echo "O dashboard foi publicado em: ${{ steps.deployment.outputs.page_url }}"
+          echo "O Cockpit CMS está disponível em: ${{ steps.deployment.outputs.page_url }}cockpit/"
