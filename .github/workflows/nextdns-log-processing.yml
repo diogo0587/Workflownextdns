@@ -12,7 +12,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        submodules: true
         fetch-depth: 0
 
     - name: Setup Hugo
@@ -35,7 +34,8 @@ jobs:
         cd hugo_site
         git init
         git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-        echo "theme = 'ananke'" >> config.toml
+        echo 'theme = "ananke"' >> config.toml
+        echo 'baseURL = "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"' >> config.toml
 
     - name: Generate content
       run: |
@@ -100,12 +100,17 @@ jobs:
                 f.write(f"- {log['timestamp']}: {log['domain']} ({log['status']})\n")
         EOF
 
-    - name: Commit and push if changed
+    - name: Commit and push changes
       run: |
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add README.md
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest logs" && git push)
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update README with latest logs")
+        git fetch origin main
+        git checkout main
+        git reset --hard origin/main
+        git cherry-pick ORIG_HEAD || true
+        git push origin main
 
     - name: Display GitHub Pages URL
       run: |
