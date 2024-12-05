@@ -153,7 +153,10 @@ jobs:
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add .
+        git stash
         git pull --rebase origin main
+        git stash pop
+        git add .
         git commit -m "Update site and README with latest logs"
         git push
 
