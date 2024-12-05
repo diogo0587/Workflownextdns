@@ -17,7 +17,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # Busca todo o histórico para merge
+        fetch-depth: 0
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
@@ -36,10 +36,14 @@ jobs:
         method: 'GET'
         customHeaders: '{"X-Api-Key": "f31f2871d328a52a45fefadc09a1c67d0dd5d53d"}'
 
-    - name: Create Hugo site
+    - name: Preparar site Hugo
       run: |
-        hugo new site . --force
-        git clone https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+        if [ ! -f "hugo.toml" ]; then
+          hugo new site . --force
+        fi
+        if [ ! -d "themes/ananke" ]; then
+          git clone https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+        fi
         echo 'theme = "ananke"' > hugo.toml
         echo 'baseURL = "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"' >> hugo.toml
 
