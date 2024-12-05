@@ -1,2 +1,3 @@
 theme = "ananke"
 baseURL = "https://diogo0587.github.io/Workflownextdns/"
+paginate = 10

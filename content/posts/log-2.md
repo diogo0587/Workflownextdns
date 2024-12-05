@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 2"
-date: 2024-12-05T21:36:43.330945
-domain: "api.github.com"
+date: 2024-12-05T21:43:31.437938
+domain: "clients3.google.com"
 status: "default"
-timestamp: "2024-12-05T21:36:34.077Z"
+timestamp: "2024-12-05T21:43:25.541Z"
 ---
 
-Domain: api.github.com
+Domain: clients3.google.com
 Status: default
-Timestamp: 2024-12-05T21:36:34.077Z
+Timestamp: 2024-12-05T21:43:25.541Z
