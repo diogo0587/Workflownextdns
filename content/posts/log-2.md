@@ -1,9 +1,9 @@
 
 ---
 title: "Log Entry 2"
-date: 2024-12-05T21:11:19.108860
+date: 2024-12-05T21:32:36.930014
 ---
 
-Domain: p16-sign-sg.tiktokcdn.com
+Domain: ap.spotify.com
 Status: default
-Timestamp: 2024-12-05T21:11:07.412Z
+Timestamp: 2024-12-05T21:32:24.666Z

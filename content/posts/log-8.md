@@ -1,9 +1,9 @@
 
 ---
 title: "Log Entry 8"
-date: 2024-12-05T21:11:19.109314
+date: 2024-12-05T21:32:36.930452
 ---
 
-Domain: clients4.google.com
+Domain: video-edge-2b0ff7.pdx01.abs.hls.ttvnw.net
 Status: default
-Timestamp: 2024-12-05T21:10:44.982Z
+Timestamp: 2024-12-05T21:31:45.137Z
