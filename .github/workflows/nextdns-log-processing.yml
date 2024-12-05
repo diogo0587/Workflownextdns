@@ -1,4 +1,4 @@
-name: Build Hugo Site with NextDNS Logs, Cockpit CMS, and Deploy to Pages
+name: Build Hugo Site with NextDNS Logs and Deploy to Pages
 
 on:
   schedule:
@@ -37,13 +37,9 @@ jobs:
     - name: Create Hugo site
       run: |
         hugo new site . --force
-        if [ ! -d "themes/ananke" ]; then
-          git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
-        else
-          echo "O tema Ananke já existe. Pulando a adição do submódulo."
-        fi
-        echo 'theme = "ananke"' >> config.toml
-        echo 'baseURL = "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"' >> config.toml
+        git clone https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+        echo 'theme = "ananke"' >> hugo.toml
+        echo 'baseURL = "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"' >> hugo.toml
 
     - name: Create Hugo layouts
       run: |
@@ -128,19 +124,6 @@ jobs:
     - name: Build Hugo site
       run: hugo --minify
 
-    - name: Install Cockpit CMS
-      run: |
-        mkdir -p public/cockpit
-        wget https://files.getcockpit.com/releases/master/cockpit-core.zip -O cockpit.zip
-        unzip cockpit.zip -d public/cockpit
-        rm cockpit.zip
-        echo "<?php define('COCKPIT_ADMIN_PASSWORD', '${{ secrets.COCKPIT_ADMIN_PASSWORD }}'); ?>" > public/cockpit/.htaccess
-        mkdir -p public/cockpit/cockpit/storage/data
-        mkdir -p public/cockpit/cockpit/storage/uploads
-        mkdir -p public/cockpit/cockpit/storage/cache
-        mkdir -p public/cockpit/cockpit/storage/tmp
-        chmod -R 755 public/cockpit/cockpit/storage
-
     - name: Update README.md
       run: |
         echo "# NextDNS Logs Dashboard" > README.md
@@ -148,7 +131,6 @@ jobs:
         echo "Última atualização: $(date)" >> README.md
         echo "" >> README.md
         echo "Visite o dashboard: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> README.md
-        echo "Acesse o Cockpit CMS: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/cockpit/" >> README.md
         echo "" >> README.md
         echo "## Logs Recentes" >> README.md
         echo "" >> README.md
@@ -165,7 +147,7 @@ jobs:
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add .
-        git commit -m "Update site and README with latest logs and Cockpit CMS"
+        git commit -m "Update site and README with latest logs"
         git push
 
     - name: Setup Pages
@@ -190,4 +172,3 @@ jobs:
       - name: Display GitHub Pages URL
         run: |
           echo "O dashboard foi publicado em: ${{ steps.deployment.outputs.page_url }}"
-          echo "O Cockpit CMS está disponível em: ${{ steps.deployment.outputs.page_url }}cockpit/"
