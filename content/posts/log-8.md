@@ -1,9 +1,12 @@
 
 ---
 title: "Log Entry 8"
-date: 2024-12-05T21:32:36.930452
+date: 2024-12-05T21:36:43.331405
+domain: "vcs-va.tiktokv.com"
+status: "default"
+timestamp: "2024-12-05T21:36:12.219Z"
 ---
 
-Domain: video-edge-2b0ff7.pdx01.abs.hls.ttvnw.net
+Domain: vcs-va.tiktokv.com
 Status: default
-Timestamp: 2024-12-05T21:31:45.137Z
+Timestamp: 2024-12-05T21:36:12.219Z

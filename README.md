@@ -1,18 +1,18 @@
 # NextDNS Logs Dashboard
 
-Última atualização: Thu Dec  5 21:32:37 UTC 2024
+Última atualização: Thu Dec  5 21:36:43 UTC 2024
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
 
 ## Logs Recentes
 
-- 2024-12-05T21:32:35.449Z: mail.google.com (default)
-- 2024-12-05T21:32:24.666Z: ap.spotify.com (default)
-- 2024-12-05T21:32:12.293Z: dc.cftls.t.co (default)
-- 2024-12-05T21:32:08.255Z: bsync22-normal-useast1a.tiktokv.com (default)
-- 2024-12-05T21:31:53.092Z: analytics.getpostman.com (default)
-- 2024-12-05T21:31:51.705Z: content-autofill.googleapis.com (default)
-- 2024-12-05T21:31:47.934Z: events.mapbox.com (default)
-- 2024-12-05T21:31:45.137Z: video-edge-2b0ff7.pdx01.abs.hls.ttvnw.net (default)
-- 2024-12-05T21:31:37.252Z: googleads.g.doubleclick.net (default)
-- 2024-12-05T21:31:35.464Z: inbox.google.com (default)
+- 2024-12-05T21:36:34.998Z: alive.github.com (default)
+- 2024-12-05T21:36:34.077Z: api.github.com (default)
+- 2024-12-05T21:36:34.074Z: api.zenhub.com (default)
+- 2024-12-05T21:36:34.059Z: app.contentstudio.io (default)
+- 2024-12-05T21:36:33.807Z: fonts.gstatic.com (default)
+- 2024-12-05T21:36:32.126Z: gecko31-normal-useast1a.tiktokv.com (default)
+- 2024-12-05T21:36:23.570Z: youtubei.googleapis.com (default)
+- 2024-12-05T21:36:12.219Z: vcs-va.tiktokv.com (default)
+- 2024-12-05T21:36:05.298Z: play.googleapis.com (default)
+- 2024-12-05T21:36:02.020Z: analytics.getpostman.com (default)

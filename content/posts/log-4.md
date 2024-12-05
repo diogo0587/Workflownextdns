@@ -1,9 +1,12 @@
 
 ---
 title: "Log Entry 4"
-date: 2024-12-05T21:32:36.930141
+date: 2024-12-05T21:36:43.331088
+domain: "app.contentstudio.io"
+status: "default"
+timestamp: "2024-12-05T21:36:34.059Z"
 ---
 
-Domain: bsync22-normal-useast1a.tiktokv.com
+Domain: app.contentstudio.io
 Status: default
-Timestamp: 2024-12-05T21:32:08.255Z
+Timestamp: 2024-12-05T21:36:34.059Z

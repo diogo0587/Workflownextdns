@@ -1,9 +1,12 @@
 
 ---
 title: "Log Entry 9"
-date: 2024-12-05T21:32:36.930551
+date: 2024-12-05T21:36:43.331481
+domain: "play.googleapis.com"
+status: "default"
+timestamp: "2024-12-05T21:36:05.298Z"
 ---
 
-Domain: googleads.g.doubleclick.net
+Domain: play.googleapis.com
 Status: default
-Timestamp: 2024-12-05T21:31:37.252Z
+Timestamp: 2024-12-05T21:36:05.298Z

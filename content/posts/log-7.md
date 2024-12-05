@@ -1,9 +1,12 @@
 
 ---
 title: "Log Entry 7"
-date: 2024-12-05T21:32:36.930383
+date: 2024-12-05T21:36:43.331333
+domain: "youtubei.googleapis.com"
+status: "default"
+timestamp: "2024-12-05T21:36:23.570Z"
 ---
 
-Domain: events.mapbox.com
+Domain: youtubei.googleapis.com
 Status: default
-Timestamp: 2024-12-05T21:31:47.934Z
+Timestamp: 2024-12-05T21:36:23.570Z
