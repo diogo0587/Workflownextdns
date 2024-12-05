@@ -16,6 +16,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Busca todo o histórico para merge
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
@@ -147,6 +149,7 @@ jobs:
         git config --global user.email "action@github.com"
         git config --global user.name "GitHub Action"
         git add .
+        git pull --rebase origin main
         git commit -m "Update site and README with latest logs"
         git push
 
