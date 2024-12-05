@@ -23,6 +23,9 @@ jobs:
         hugo-version: 'latest'
         extended: true
 
+    - name: Verificar instalação do Hugo
+      run: hugo version
+
     - name: Fetch NextDNS logs
       uses: fjogeleit/http-request-action@v1
       id: nextdns_request
