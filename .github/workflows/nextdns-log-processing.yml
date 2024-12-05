@@ -37,7 +37,11 @@ jobs:
     - name: Create Hugo site
       run: |
         hugo new site . --force
-        git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+        if [ ! -d "themes/ananke" ]; then
+          git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+        else
+          echo "O tema Ananke já existe. Pulando a adição do submódulo."
+        fi
         echo 'theme = "ananke"' >> config.toml
         echo 'baseURL = "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"' >> config.toml
 
