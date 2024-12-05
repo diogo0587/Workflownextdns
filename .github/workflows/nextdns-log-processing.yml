@@ -49,7 +49,7 @@ jobs:
 
     - name: Create Hugo layouts
       run: |
-        mkdir -p layouts/_default
+        mkdir -p layouts
         cat << EOF > layouts/index.html
         <!DOCTYPE html>
         <html lang="en">
@@ -61,35 +61,17 @@ jobs:
         <body>
             <h1>{{ .Title }}</h1>
             {{ .Content }}
-        </body>
-        </html>
-        EOF
-        cat << EOF > layouts/_default/single.html
-        {{ define "main" }}
-            <h1>{{ .Title }}</h1>
-            {{ .Content }}
-        {{ end }}
-        EOF
-        cat << EOF > layouts/_default/list.html
-        {{ define "main" }}
-            <h1>{{ .Title }}</h1>
+            <h2>Logs Recentes</h2>
             <ul>
-            {{ range .Pages }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+            {{ range .Site.RegularPages }}
+                <li>
+                    <h3>{{ .Title }}</h3>
+                    <p>Domain: {{ .Params.domain }}</p>
+                    <p>Status: {{ .Params.status }}</p>
+                    <p>Timestamp: {{ .Params.timestamp }}</p>
+                </li>
             {{ end }}
             </ul>
-        {{ end }}
-        EOF
-        cat << EOF > layouts/_default/baseof.html
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>{{ .Title }}</title>
-        </head>
-        <body>
-            {{ block "main" . }}{{ end }}
         </body>
         </html>
         EOF
@@ -119,6 +101,9 @@ jobs:
         ---
         title: "Log Entry {i+1}"
         date: {datetime.now().isoformat()}
+        domain: "{log.get('domain', 'N/A')}"
+        status: "{log.get('status', 'N/A')}"
+        timestamp: "{log.get('timestamp', 'N/A')}"
         ---
         
         Domain: {log.get('domain', 'N/A')}
