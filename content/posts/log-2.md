@@ -1,9 +1,9 @@
 
 ---
 title: "Log Entry 2"
-date: 2024-12-01T06:39:03.203619
+date: 2024-12-05T21:11:19.108860
 ---
 
-Domain: web.diagnostic.networking.aws.dev
+Domain: p16-sign-sg.tiktokcdn.com
 Status: default
-Timestamp: 2024-12-01T01:16:38.036Z
+Timestamp: 2024-12-05T21:11:07.412Z

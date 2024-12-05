@@ -1,9 +1,9 @@
 
 ---
 title: "Log Entry 7"
-date: 2024-12-01T06:39:03.203923
+date: 2024-12-05T21:11:19.109237
 ---
 
-Domain: web.diagnostic.networking.aws.dev
+Domain: api.onesignal.com
 Status: default
-Timestamp: 2024-12-01T01:11:35.201Z
+Timestamp: 2024-12-05T21:10:47.289Z
