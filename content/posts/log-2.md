@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 2"
-date: 2024-12-05T21:43:31.437938
-domain: "clients3.google.com"
+date: 2024-12-06T01:19:38.547615
+domain: "www.google.com"
 status: "default"
-timestamp: "2024-12-05T21:43:25.541Z"
+timestamp: "2024-12-06T01:19:37.047Z"
 ---
 
-Domain: clients3.google.com
+Domain: www.google.com
 Status: default
-Timestamp: 2024-12-05T21:43:25.541Z
+Timestamp: 2024-12-06T01:19:37.047Z

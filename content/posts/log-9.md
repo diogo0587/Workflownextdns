@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 9"
-date: 2024-12-05T21:43:31.438428
-domain: "ak-static.kwai.net"
+date: 2024-12-06T01:19:38.548175
+domain: "googleads.g.doubleclick.net"
 status: "default"
-timestamp: "2024-12-05T21:43:24.024Z"
+timestamp: "2024-12-06T01:19:33.348Z"
 ---
 
-Domain: ak-static.kwai.net
+Domain: googleads.g.doubleclick.net
 Status: default
-Timestamp: 2024-12-05T21:43:24.024Z
+Timestamp: 2024-12-06T01:19:33.348Z
