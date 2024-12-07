@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 4"
-date: 2024-12-06T01:19:38.547745
-domain: "sponsor.ajay.app"
+date: 2024-12-07T01:19:16.429186
+domain: "ms.applovin.com"
 status: "default"
-timestamp: "2024-12-06T01:19:36.749Z"
+timestamp: "2024-12-07T01:19:14.099Z"
 ---
 
-Domain: sponsor.ajay.app
+Domain: ms.applovin.com
 Status: default
-Timestamp: 2024-12-06T01:19:36.749Z
+Timestamp: 2024-12-07T01:19:14.099Z

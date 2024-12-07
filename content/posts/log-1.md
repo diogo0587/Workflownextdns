@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 1"
-date: 2024-12-06T01:19:38.547536
-domain: "www.google.com.br"
+date: 2024-12-07T01:19:16.428939
+domain: "rt.applovin.com"
 status: "default"
-timestamp: "2024-12-06T01:19:37.281Z"
+timestamp: "2024-12-07T01:19:14.580Z"
 ---
 
-Domain: www.google.com.br
+Domain: rt.applovin.com
 Status: default
-Timestamp: 2024-12-06T01:19:37.281Z
+Timestamp: 2024-12-07T01:19:14.580Z
