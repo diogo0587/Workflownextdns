@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 9"
-date: 2024-12-07T01:19:16.429539
-domain: "api16-access-sg.pangle.io"
+date: 2024-12-08T01:25:54.237599
+domain: "googleads.g.doubleclick.net"
 status: "default"
-timestamp: "2024-12-07T01:19:12.576Z"
+timestamp: "2024-12-08T01:23:51.660Z"
 ---
 
-Domain: api16-access-sg.pangle.io
+Domain: googleads.g.doubleclick.net
 Status: default
-Timestamp: 2024-12-07T01:19:12.576Z
+Timestamp: 2024-12-08T01:23:51.660Z

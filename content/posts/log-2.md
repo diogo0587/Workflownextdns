@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 2"
-date: 2024-12-07T01:19:16.429017
-domain: "d.applovin.com"
+date: 2024-12-08T01:25:54.237123
+domain: "apioci.newffads.com"
 status: "default"
-timestamp: "2024-12-07T01:19:14.564Z"
+timestamp: "2024-12-08T01:25:04.395Z"
 ---
 
-Domain: d.applovin.com
+Domain: apioci.newffads.com
 Status: default
-Timestamp: 2024-12-07T01:19:14.564Z
+Timestamp: 2024-12-08T01:25:04.395Z
