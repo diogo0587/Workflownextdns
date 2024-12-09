@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 10"
-date: 2024-12-08T01:25:54.237659
-domain: "d.applovin.com"
+date: 2024-12-09T01:22:26.479954
+domain: "video-edge-28784a.pdx01.abs.hls.ttvnw.net"
 status: "default"
-timestamp: "2024-12-08T01:23:47.544Z"
+timestamp: "2024-12-09T01:20:37.596Z"
 ---
 
-Domain: d.applovin.com
+Domain: video-edge-28784a.pdx01.abs.hls.ttvnw.net
 Status: default
-Timestamp: 2024-12-08T01:23:47.544Z
+Timestamp: 2024-12-09T01:20:37.596Z

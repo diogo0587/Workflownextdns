@@ -1,18 +1,18 @@
 # NextDNS Logs Dashboard
 
-Última atualização: Sun Dec  8 01:25:54 UTC 2024
+Última atualização: Mon Dec  9 01:22:26 UTC 2024
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
 
 ## Logs Recentes
 
-- 2024-12-08T01:25:06.514Z: w1.kskwai.com (default)
-- 2024-12-08T01:25:04.395Z: apioci.newffads.com (default)
-- 2024-12-08T01:24:49.035Z: clients3.google.com (default)
-- 2024-12-08T01:24:43.852Z: g.whatsapp.net (default)
-- 2024-12-08T01:24:43.813Z: 2.android.pool.ntp.org (default)
-- 2024-12-08T01:24:43.548Z: pubsub.googleapis.com (default)
-- 2024-12-08T01:24:41.710Z: t-ulog-pro.kwai-pro.com (default)
-- 2024-12-08T01:23:52.404Z: az2-api-txpro.kwai-pro.com (default)
-- 2024-12-08T01:23:51.660Z: googleads.g.doubleclick.net (default)
-- 2024-12-08T01:23:47.544Z: d.applovin.com (default)
+- 2024-12-09T01:22:24.877Z: az2-api-txpro.kwai-pro.com (default)
+- 2024-12-09T01:22:15.045Z: vcs-va.tiktokv.com (default)
+- 2024-12-09T01:22:14.434Z: bsync32-normal-useast1a.tiktokv.com (default)
+- 2024-12-09T01:22:12.767Z: video-edge-28784a.pdx01.abs.hls.ttvnw.net (default)
+- 2024-12-09T01:21:40.907Z: z-p42-chat-e2ee-ig.facebook.com (default)
+- 2024-12-09T01:21:14.936Z: probe.twitter.com (default)
+- 2024-12-09T01:21:09.251Z: web.diagnostic.networking.aws.dev (default)
+- 2024-12-09T01:20:40.198Z: graph.instagram.com (default)
+- 2024-12-09T01:20:39.441Z: i.instagram.com (default)
+- 2024-12-09T01:20:37.596Z: video-edge-28784a.pdx01.abs.hls.ttvnw.net (default)
