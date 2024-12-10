@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 8"
-date: 2024-12-09T01:22:26.479834
-domain: "graph.instagram.com"
+date: 2024-12-10T01:21:38.174155
+domain: "api-33-0-0.twitter.com"
 status: "default"
-timestamp: "2024-12-09T01:20:40.198Z"
+timestamp: "2024-12-10T01:19:53.844Z"
 ---
 
-Domain: graph.instagram.com
+Domain: api-33-0-0.twitter.com
 Status: default
-Timestamp: 2024-12-09T01:20:40.198Z
+Timestamp: 2024-12-10T01:19:53.844Z
