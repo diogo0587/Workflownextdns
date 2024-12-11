@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 3"
-date: 2024-12-10T01:21:38.173852
-domain: "pubsub.googleapis.com"
+date: 2024-12-11T01:20:30.441270
+domain: "auto-api.yelp.com"
 status: "default"
-timestamp: "2024-12-10T01:21:07.375Z"
+timestamp: "2024-12-11T01:20:08.180Z"
 ---
 
-Domain: pubsub.googleapis.com
+Domain: auto-api.yelp.com
 Status: default
-Timestamp: 2024-12-10T01:21:07.375Z
+Timestamp: 2024-12-11T01:20:08.180Z

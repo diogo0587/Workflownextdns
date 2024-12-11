@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 1"
-date: 2024-12-10T01:21:38.173712
-domain: "api-42-0-0.twitter.com"
+date: 2024-12-11T01:20:30.441121
+domain: "yildun.iad-03.braze.com"
 status: "default"
-timestamp: "2024-12-10T01:21:33.847Z"
+timestamp: "2024-12-11T01:20:08.963Z"
 ---
 
-Domain: api-42-0-0.twitter.com
+Domain: yildun.iad-03.braze.com
 Status: default
-Timestamp: 2024-12-10T01:21:33.847Z
+Timestamp: 2024-12-11T01:20:08.963Z
