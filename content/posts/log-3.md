@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 3"
-date: 2024-12-11T01:20:30.441270
-domain: "auto-api.yelp.com"
+date: 2024-12-12T01:20:04.364755
+domain: "mqtt-mini.facebook.com"
 status: "default"
-timestamp: "2024-12-11T01:20:08.180Z"
+timestamp: "2024-12-11T17:56:22.520Z"
 ---
 
-Domain: auto-api.yelp.com
+Domain: mqtt-mini.facebook.com
 Status: default
-Timestamp: 2024-12-11T01:20:08.180Z
+Timestamp: 2024-12-11T17:56:22.520Z

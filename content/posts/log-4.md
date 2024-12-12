@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 4"
-date: 2024-12-11T01:20:30.441334
-domain: "experiment-allocation.yelp.com"
+date: 2024-12-12T01:20:04.364818
+domain: "mail.google.com"
 status: "default"
-timestamp: "2024-12-11T01:20:08.179Z"
+timestamp: "2024-12-11T17:54:39.032Z"
 ---
 
-Domain: experiment-allocation.yelp.com
+Domain: mail.google.com
 Status: default
-Timestamp: 2024-12-11T01:20:08.179Z
+Timestamp: 2024-12-11T17:54:39.032Z

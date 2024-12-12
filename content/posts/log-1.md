@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 1"
-date: 2024-12-11T01:20:30.441121
-domain: "yildun.iad-03.braze.com"
+date: 2024-12-12T01:20:04.364612
+domain: "pushdata.sendpulse.com"
 status: "default"
-timestamp: "2024-12-11T01:20:08.963Z"
+timestamp: "2024-12-11T20:02:05.370Z"
 ---
 
-Domain: yildun.iad-03.braze.com
+Domain: pushdata.sendpulse.com
 Status: default
-Timestamp: 2024-12-11T01:20:08.963Z
+Timestamp: 2024-12-11T20:02:05.370Z
