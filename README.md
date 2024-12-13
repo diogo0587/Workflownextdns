@@ -1,18 +1,18 @@
 # NextDNS Logs Dashboard
 
-Última atualização: Thu Dec 12 01:20:04 UTC 2024
+Última atualização: Fri Dec 13 01:21:20 UTC 2024
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
 
 ## Logs Recentes
 
-- 2024-12-11T20:02:05.370Z: pushdata.sendpulse.com (default)
-- 2024-12-11T17:59:12.207Z: time.android.com (default)
-- 2024-12-11T17:56:22.520Z: mqtt-mini.facebook.com (default)
-- 2024-12-11T17:54:39.032Z: mail.google.com (default)
-- 2024-12-11T17:54:33.149Z: 0.datadog.pool.ntp.org (default)
-- 2024-12-11T17:54:23.609Z: spot-pa.googleapis.com (default)
-- 2024-12-11T17:52:40.250Z: mobilemaps-pa-gz.googleapis.com (default)
-- 2024-12-11T17:52:39.934Z: geller-pa.googleapis.com (default)
-- 2024-12-11T17:52:37.908Z: android-context-data.googleapis.com (default)
-- 2024-12-11T17:49:34.638Z: f.i.uol.com.br (default)
+- 2024-12-13T01:21:18.290Z: inbox.google.com (default)
+- 2024-12-13T01:21:15.859Z: api.x.com (default)
+- 2024-12-13T01:21:13.280Z: inbox.google.com (default)
+- 2024-12-13T01:21:12.676Z: android.googleapis.com (default)
+- 2024-12-13T01:21:10.800Z: pubsub.googleapis.com (default)
+- 2024-12-13T01:21:09.165Z: us.statusapi.micloud.xiaomi.net (default)
+- 2024-12-13T01:21:08.909Z: sdkconfig.ad.intl.xiaomi.com (default)
+- 2024-12-13T01:21:08.881Z: gql-fed.reddit.com (default)
+- 2024-12-13T01:21:08.703Z: jupiter.intl.sys.miui.com (default)
+- 2024-12-13T01:21:07.670Z: android.googleapis.com (default)
