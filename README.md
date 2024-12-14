@@ -1,18 +1,18 @@
 # NextDNS Logs Dashboard
 
-Última atualização: Fri Dec 13 01:21:20 UTC 2024
+Última atualização: Sat Dec 14 01:17:58 UTC 2024
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
 
 ## Logs Recentes
 
-- 2024-12-13T01:21:18.290Z: inbox.google.com (default)
-- 2024-12-13T01:21:15.859Z: api.x.com (default)
-- 2024-12-13T01:21:13.280Z: inbox.google.com (default)
-- 2024-12-13T01:21:12.676Z: android.googleapis.com (default)
-- 2024-12-13T01:21:10.800Z: pubsub.googleapis.com (default)
-- 2024-12-13T01:21:09.165Z: us.statusapi.micloud.xiaomi.net (default)
-- 2024-12-13T01:21:08.909Z: sdkconfig.ad.intl.xiaomi.com (default)
-- 2024-12-13T01:21:08.881Z: gql-fed.reddit.com (default)
-- 2024-12-13T01:21:08.703Z: jupiter.intl.sys.miui.com (default)
-- 2024-12-13T01:21:07.670Z: android.googleapis.com (default)
+- 2024-12-13T06:05:04.249Z: sdk.fra-01.braze.eu (default)
+- 2024-12-13T06:05:03.261Z: thind.unityads.unity3d.com (default)
+- 2024-12-13T06:05:03.166Z: config.edge.skype.com (blocked)
+- 2024-12-13T06:05:01.021Z: video-edge-65fa4d.pdx01.abs.hls.ttvnw.net (default)
+- 2024-12-13T06:05:00.813Z: googleads.g.doubleclick.net (default)
+- 2024-12-13T06:05:00.233Z: events.ads.vungle.com (default)
+- 2024-12-13T06:05:00.170Z: in.appcenter.ms (default)
+- 2024-12-13T06:04:59.333Z: configv2.unityads.unity3d.com (default)
+- 2024-12-13T06:04:58.925Z: kinesis.eu-west-1.amazonaws.com (default)
+- 2024-12-13T06:04:58.626Z: tvm.moovitapp.com (default)
