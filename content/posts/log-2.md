@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 2"
-date: 2024-12-14T01:17:58.192527
-domain: "thind.unityads.unity3d.com"
+date: 2024-12-18T01:17:10.494704
+domain: "firebaselogging.googleapis.com"
 status: "default"
-timestamp: "2024-12-13T06:05:03.261Z"
+timestamp: "2024-12-15T23:00:02.215Z"
 ---
 
-Domain: thind.unityads.unity3d.com
+Domain: firebaselogging.googleapis.com
 Status: default
-Timestamp: 2024-12-13T06:05:03.261Z
+Timestamp: 2024-12-15T23:00:02.215Z

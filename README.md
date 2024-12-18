@@ -1,18 +1,18 @@
 # NextDNS Logs Dashboard
 
-Última atualização: Sat Dec 14 01:17:58 UTC 2024
+Última atualização: Wed Dec 18 01:17:10 UTC 2024
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
 
 ## Logs Recentes
 
-- 2024-12-13T06:05:04.249Z: sdk.fra-01.braze.eu (default)
-- 2024-12-13T06:05:03.261Z: thind.unityads.unity3d.com (default)
-- 2024-12-13T06:05:03.166Z: config.edge.skype.com (blocked)
-- 2024-12-13T06:05:01.021Z: video-edge-65fa4d.pdx01.abs.hls.ttvnw.net (default)
-- 2024-12-13T06:05:00.813Z: googleads.g.doubleclick.net (default)
-- 2024-12-13T06:05:00.233Z: events.ads.vungle.com (default)
-- 2024-12-13T06:05:00.170Z: in.appcenter.ms (default)
-- 2024-12-13T06:04:59.333Z: configv2.unityads.unity3d.com (default)
-- 2024-12-13T06:04:58.925Z: kinesis.eu-west-1.amazonaws.com (default)
-- 2024-12-13T06:04:58.626Z: tvm.moovitapp.com (default)
+- 2024-12-15T23:00:02.819Z: device-api.urbanairship.com (default)
+- 2024-12-15T23:00:02.215Z: firebaselogging.googleapis.com (default)
+- 2024-12-15T23:00:02.001Z: blazesdk-prod-cdn.clipro.tv (default)
+- 2024-12-15T23:00:01.002Z: api.fstr.rocks (default)
+- 2024-12-15T23:00:00.129Z: sb.adtidy.org (default)
+- 2024-12-15T22:59:37.584Z: service2.us.incognia.com (default)
+- 2024-12-15T22:59:35.597Z: time.apple.com (default)
+- 2024-12-15T22:59:35.257Z: env-var.fstr.rocks (default)
+- 2024-12-15T22:59:34.044Z: api.permutive.app (default)
+- 2024-12-15T22:59:28.688Z: txv2-br-cdn.kwai.net (default)

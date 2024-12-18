@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 5"
-date: 2024-12-14T01:17:58.192715
-domain: "googleads.g.doubleclick.net"
+date: 2024-12-18T01:17:10.495005
+domain: "sb.adtidy.org"
 status: "default"
-timestamp: "2024-12-13T06:05:00.813Z"
+timestamp: "2024-12-15T23:00:00.129Z"
 ---
 
-Domain: googleads.g.doubleclick.net
+Domain: sb.adtidy.org
 Status: default
-Timestamp: 2024-12-13T06:05:00.813Z
+Timestamp: 2024-12-15T23:00:00.129Z
