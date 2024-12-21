@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 7"
-date: 2024-12-20T01:14:11.060319
-domain: "time.apple.com"
+date: 2024-12-21T01:12:47.935064
+domain: "whois.arin.net"
 status: "default"
-timestamp: "2024-12-15T22:59:35.597Z"
+timestamp: "2024-12-20T01:59:15.112Z"
 ---
 
-Domain: time.apple.com
+Domain: whois.arin.net
 Status: default
-Timestamp: 2024-12-15T22:59:35.597Z
+Timestamp: 2024-12-20T01:59:15.112Z

@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 5"
-date: 2024-12-20T01:14:11.060160
-domain: "sb.adtidy.org"
+date: 2024-12-21T01:12:47.934949
+domain: "api.nextdns.io"
 status: "default"
-timestamp: "2024-12-15T23:00:00.129Z"
+timestamp: "2024-12-20T01:59:23.944Z"
 ---
 
-Domain: sb.adtidy.org
+Domain: api.nextdns.io
 Status: default
-Timestamp: 2024-12-15T23:00:00.129Z
+Timestamp: 2024-12-20T01:59:23.944Z

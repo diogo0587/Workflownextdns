@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 4"
-date: 2024-12-20T01:14:11.060074
-domain: "api.fstr.rocks"
+date: 2024-12-21T01:12:47.934890
+domain: "favicons.nextdns.io"
 status: "default"
-timestamp: "2024-12-15T23:00:01.002Z"
+timestamp: "2024-12-20T01:59:25.734Z"
 ---
 
-Domain: api.fstr.rocks
+Domain: favicons.nextdns.io
 Status: default
-Timestamp: 2024-12-15T23:00:01.002Z
+Timestamp: 2024-12-20T01:59:25.734Z

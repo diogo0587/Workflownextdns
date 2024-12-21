@@ -1,18 +1,18 @@
 # NextDNS Logs Dashboard
 
-Última atualização: Fri Dec 20 01:14:11 UTC 2024
+Última atualização: Sat Dec 21 01:12:48 UTC 2024
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
 
 ## Logs Recentes
 
-- 2024-12-15T23:00:02.819Z: device-api.urbanairship.com (default)
-- 2024-12-15T23:00:02.215Z: firebaselogging.googleapis.com (default)
-- 2024-12-15T23:00:02.001Z: blazesdk-prod-cdn.clipro.tv (default)
-- 2024-12-15T23:00:01.002Z: api.fstr.rocks (default)
-- 2024-12-15T23:00:00.129Z: sb.adtidy.org (default)
-- 2024-12-15T22:59:37.584Z: service2.us.incognia.com (default)
-- 2024-12-15T22:59:35.597Z: time.apple.com (default)
-- 2024-12-15T22:59:35.257Z: env-var.fstr.rocks (default)
-- 2024-12-15T22:59:34.044Z: api.permutive.app (default)
-- 2024-12-15T22:59:28.688Z: txv2-br-cdn.kwai.net (default)
+- 2024-12-20T01:59:57.492Z: optimizationguide-pa.googleapis.com (default)
+- 2024-12-20T01:59:32.647Z: clients4.google.com (default)
+- 2024-12-20T01:59:27.285Z: readaloud.googleapis.com (default)
+- 2024-12-20T01:59:25.734Z: favicons.nextdns.io (default)
+- 2024-12-20T01:59:23.944Z: api.nextdns.io (default)
+- 2024-12-20T01:59:16.206Z: whois.lacnic.net (default)
+- 2024-12-20T01:59:15.112Z: whois.arin.net (default)
+- 2024-12-20T01:59:15.098Z: my.nextdns.io (default)
+- 2024-12-20T01:59:06.174Z: clients2.google.com (default)
+- 2024-12-20T01:58:44.384Z: en.wikipedia.org (default)

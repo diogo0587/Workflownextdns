@@ -1,12 +1,12 @@
 
 ---
 title: "Log Entry 1"
-date: 2024-12-20T01:14:11.059858
-domain: "device-api.urbanairship.com"
+date: 2024-12-21T01:12:47.934688
+domain: "optimizationguide-pa.googleapis.com"
 status: "default"
-timestamp: "2024-12-15T23:00:02.819Z"
+timestamp: "2024-12-20T01:59:57.492Z"
 ---
 
-Domain: device-api.urbanairship.com
+Domain: optimizationguide-pa.googleapis.com
 Status: default
-Timestamp: 2024-12-15T23:00:02.819Z
+Timestamp: 2024-12-20T01:59:57.492Z
