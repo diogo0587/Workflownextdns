@@ -1,6 +1,6 @@
 # NextDNS Logs Dashboard
 
-Última atualização: Thu Jan  2 01:13:07 UTC 2025
+Última atualização: Fri Jan  3 01:14:07 UTC 2025
 
 Visite o dashboard: https://diogo0587.github.io/Workflownextdns/
 
